@@ -1,0 +1,33 @@
+CREATE TABLE shoesco (id INTEGER PRIMARY KEY, BrandName TEXT, Style TEXT, price INTEGER, popularity INTEGER);
+
+INSERT INTO shoesco VALUES (1, "UGGS", "boots", 100, 14);
+INSERT INTO shoesco VALUES (2, "YSL","heels", 825, 2);
+INSERT INTO shoesco VALUES (3, "Jordan","sneakers", 350, 9);
+INSERT INTO shoesco VALUES (4, "Nikes", "Fashion sneakers", 200, 8);
+INSERT INTO shoesco VALUES (5, "Christian Louboutin","heels", 1500, 1);
+INSERT INTO shoesco VALUES (6, "New Balance","casual sneakers", 85, 3);
+INSERT INTO shoesco VALUES (7, "Gucci","designer brand sneakers", 600, 4);
+INSERT INTO shoesco VALUES (8, "Louis Vuitton","boots", 900, 5);
+INSERT INTO shoesco VALUES (9, "Birkenstock","sandals", 100, 15);
+INSERT INTO shoesco VALUES (10, "Prada","heels", 600, 13);
+INSERT INTO shoesco VALUES (11, "Fendi","heels", 975, 11);
+INSERT INTO shoesco VALUES (12, "Chanel","slip ons", 1000, 10);
+INSERT INTO shoesco VALUES (13, "Dior","heels", 935, 6);
+INSERT INTO shoesco VALUES (14, "Jimmy Choo","heels", 995, 7);
+INSERT INTO shoesco VALUES (15, "Golden Goose","designer brand sneakers", 675, 12);
+ 
+
+--display the database ordered by price. 
+SELECT * FROM shoesco
+ORDER BY price desc; 
+
+--what is the avg price of shoe in the heels style? 
+SELECT AVG(price) "avg heels item price"
+FROM shoesco
+where style='heels';
+
+--what are the most 5 popular items? 
+SELECT BrandName, price, popularity
+FROM shoesco
+order by popularity asc
+limit 5;

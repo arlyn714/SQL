@@ -86,8 +86,29 @@ limit 10;
 /* I wanted to see if there was any correalation between popularity and alignment or between popularity and fighting skills */
 select name, popularity, alignment, fighting_skills from marvels
 group by name
-having popularity < 25 OR fighting_skills >= 4
-ORDER BY popularity asc
-limit 10;
+having popularity < 25 OR fighting_skills >= 5
+ORDER BY popularity asc;
+
+/*AVG Strength*/
+select avg(strength) from marvels;
+/*Min Strength)*/
+SELECT name, min(strength) from marvels;
+
+/*Grouping data Values by strength*/
+Select name, strength,
+    CASE
+        WHEN strength <= 2 THEN "Weak"
+        WHEN strength <= 4.11  THEN "Moderately Strong"
+        WHEN strength <= 4.12 THEN "Strong"
+        WHEN strength <= 6 THEN "Stronger" 
+        Else "Strongest"
+    END as "Str_measure"
+from marvels;
+
+
+
+
+        
+
 
 

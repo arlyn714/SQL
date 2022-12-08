@@ -111,4 +111,4 @@ sum(price*quantity) as rev
 from BIT_DB.JanSales
 group by product
 order by rev desc
-limit 5;
+limit 1;
